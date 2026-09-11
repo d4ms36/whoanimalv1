@@ -1,0 +1,36 @@
+# Gradle & Build
+.gradle/
+build/
+bin/
+gen/
+out/
+
+# Android Studio / IntelliJ IDEA
+*.iml
+.idea/
+local.properties
+.navigation/
+captures/
+
+# Artifacts
+*.apk
+*.aar
+*.aab
+*.dex
+*.class
+
+# Keystores & Secrets
+*.jks
+*.keystore
+google-services.json
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs & Temp
+*.log
+*.tmp
+*.bak
+*.swp
+*~
