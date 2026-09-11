@@ -32,7 +32,7 @@ Construir un producto limpio, estable, modular y 100% *Pet Friendly*, enfocado e
 
 ## 4. Estado Actual
 
-* **Fase Actual:** `WHO-V1-001 — PRODUCT & EXPERIENCE DEFINITION`
+* **Fase Actual:** `WHO-V1-002 — EXPERIENCE ARCHITECTURE & VISUAL FOUNDATION`
 * **Condición:** Especificación de producto, experiencia, MVP y ontología de dominio completada en fase documental.
 * **Código de aplicación:** Ninguno (no se ha creado código Android ni UI en esta fase de definición).
 
@@ -55,13 +55,18 @@ Toda la documentación base se encuentra centralizada en el directorio [`/docs`]
 * [VISION.md](docs/VISION.md): Visión provisional, problema, diferenciación y horizonte del producto.
 * [PRODUCT.md](docs/PRODUCT.md): Pilares fundamentales, reglas de producto, Pet Friendly y The Who Animal Test.
 * [EXPERIENCE.md](docs/EXPERIENCE.md): Core loop, viaje del usuario y arquitectura emocional de la Home.
+* [VISUAL_LANGUAGE.md](docs/VISUAL_LANGUAGE.md): Identidad visual del Explorador Naturalista y rechazos estéticos.
+* [HOME_ARCHITECTURE.md](docs/HOME_ARCHITECTURE.md): Arquitectura espacial y estratos del Campamento Base.
+* [DESIGN_TOKENS.md](docs/DESIGN_TOKENS.md): Tokens preliminares de color, tipografía, espaciado y elevación.
+* [CARD_ART_DIRECTION.md](docs/CARD_ART_DIRECTION.md): Dirección artística de la Card como lámina física coleccionable.
+* [EMOTION_MAP.md](docs/EMOTION_MAP.md): Mapeo emocional, ritmo y filosofía sensorial háptica/acústica.
 * [MVP.md](docs/MVP.md): Definición MoSCoW del Producto Mínimo Viable.
 * [CARD_SYSTEM.md](docs/CARD_SYSTEM.md): El sistema de cartas, ontología y los tres pilares (Científico, Experiencia, Lore).
 * [DATA_MODEL.md](docs/DATA_MODEL.md): Ontología de dominio aprendida y flujo conceptual de estados.
 * [NAVIGATION.md](docs/NAVIGATION.md): El MVP Journey (matriz de 6 etapas y 8 dimensiones).
 * [USER_STORIES.md](docs/USER_STORIES.md): Historias de usuario mínimas y centradas en el MVP.
 * [ACCEPTANCE_CRITERIA.md](docs/ACCEPTANCE_CRITERIA.md): Criterios de aceptación de producto y experiencia.
-* [DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md): Dirección visual, estética y paleta cromática conceptual.
+* [DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md): Dirección visual conceptual inicial.
 * [ARCHITECTURE.md](docs/ARCHITECTURE.md): Principios de ingeniería y Clean Architecture.
 * [ROADMAP.md](docs/ROADMAP.md): Fases de desarrollo previstas y progreso actual.
 * [DECISIONS.md](docs/DECISIONS.md): Registro histórico de decisiones de producto y arquitectura (ADR).

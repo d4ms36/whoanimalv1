@@ -22,11 +22,12 @@
   * Establecimiento del principio 100% Pet Friendly y formulación de *The Who Animal Test*.
   * Creación de Historias de Usuario mínimas y Criterios de Aceptación de producto.
 
-* [ ] **Fase 2: WHO-V1-002 — Design System & Visual Foundations**
-  * Definición formal de la paleta cromática inspirada en Mist, Sage, Deep Teal, Forest, Stone y Cream.
-  * Sistema tipográfico, espaciados y elevaciones táctiles.
-  * Lenguaje visual de la Card y de los contenedores de los tres pilares.
-  * Exploraciones visuales conceptuales del Campamento Base.
+* [x] **Fase 2: WHO-V1-002 — Experience Architecture & Visual Foundation (Actual)**
+  * Definición del Lenguaje Visual del Explorador Naturalista (`VISUAL_LANGUAGE.md`).
+  * Formalización de la Arquitectura Espacial de la Home / Campamento Base (`HOME_ARCHITECTURE.md`).
+  * Especificación de Tokens Preliminares de Color, Tipografía, Espaciado y Elevación (`DESIGN_TOKENS.md`).
+  * Dirección Artística de la Card coleccionable como lámina física de naturalista (`CARD_ART_DIRECTION.md`).
+  * Mapeo Emocional y Filosofía Sensorial (`EMOTION_MAP.md`).
 
 * [ ] **Fase 3: WHO-V1-003 — Architecture & Core Domain Modeling**
   * Inicialización del proyecto Android limpio sin deuda técnica.

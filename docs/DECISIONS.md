@@ -107,3 +107,27 @@ Este documento registra formalmente las decisiones de arquitectura, producto y e
 * **Contexto:** Publicar o almacenar ubicaciones exactas de especies en peligro de extinción puede facilitar la caza furtiva o el acoso de hábitats sensibles.
 * **Decisión:** En cumplimiento del principio 100% Pet Friendly, cualquier especie categorizada como vulnerable o amenazada en la Lista Roja de la UICN omitirá coordenadas GPS de alta resolución en sus metadatos y exportaciones.
 * **Impacto:** Protección efectiva de la fauna silvestre y coherencia ética total del producto.
+
+---
+
+## DEC-V1-014: Identidad Visual del Explorador Naturalista y Campamento Base
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** Se requiere definir el tono visual e identitario del producto para evitar interfaces genéricas o de videojuego arcade.
+* **Decisión:** Who Animal v1 adopta la identidad visual del "Explorador Naturalista", conceptualizando la Home como el "Campamento base de un explorador de fauna" bajo la jerarquía espacial TECHO, PECHO, ABDOMEN, PELVIS y PIES.
+* **Impacto:** Establece una experiencia táctil, serena y de alta gama, descartando definitivamente dashboards corporativos o interfaces de combate.
+
+---
+
+## DEC-V1-015: Tokens Preliminares de Color y Tipografía Editorial
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** El diseño necesita una paleta cromática armónica y un sistema tipográfico que equilibre rigor zoológico y belleza artística.
+* **Decisión:** Se formaliza la paleta preliminar: Mist (#EBF0ED), Sage (#8EA89D), Forest (#233D34), Deep Teal (#1A4240), Stone (#7B857F) y Cream (#F7F5F0), combinada con una jerarquía tipográfica que incluye Serif editorial para display y titulares, Sans-serif limpia para taxonomía y Editorial Italic para notas de campo.
+* **Impacto:** Coherencia estética en todas las pantallas y rechazo explícito del naranja dominante.
+
+---
+
+## DEC-V1-016: Dirección Artística de la Card como Lámina de Naturalista
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** La carta debe sentirse como una pieza de colección personal y no como un componente genérico de software.
+* **Decisión:** La Card se diseña en proporción 5:7 evocando una lámina de naturalista en cartulina mate de 300 g/m², encuadrando la foto real del usuario y delimitando con pulcritud los tres pilares (Científico, Experiencia y Lore señalizado).
+* **Impacto:** Máximo valor emocional de la recompensa sin recurrir a neones, efectos gacha ni saturación visual.
