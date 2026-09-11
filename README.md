@@ -32,7 +32,7 @@ Construir un producto limpio, estable, modular y 100% *Pet Friendly*, enfocado e
 
 ## 4. Estado Actual
 
-* **Fase Actual:** `WHO-V1-002 — EXPERIENCE ARCHITECTURE & VISUAL FOUNDATION`
+* **Fase Actual:** `WHO-V1-002 — DESIGN SYSTEM & ART DIRECTION FOUNDATION`
 * **Condición:** Especificación de producto, experiencia, MVP y ontología de dominio completada en fase documental.
 * **Código de aplicación:** Ninguno (no se ha creado código Android ni UI en esta fase de definición).
 
@@ -66,7 +66,15 @@ Toda la documentación base se encuentra centralizada en el directorio [`/docs`]
 * [NAVIGATION.md](docs/NAVIGATION.md): El MVP Journey (matriz de 6 etapas y 8 dimensiones).
 * [USER_STORIES.md](docs/USER_STORIES.md): Historias de usuario mínimas y centradas en el MVP.
 * [ACCEPTANCE_CRITERIA.md](docs/ACCEPTANCE_CRITERIA.md): Criterios de aceptación de producto y experiencia.
-* [DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md): Dirección visual conceptual inicial.
+* [DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md): Dirección creativa y visual oficial.
+* [docs/design/](docs/design/): Suite oficial del Sistema de Diseño:
+  * [DESIGN_SYSTEM.md](docs/design/DESIGN_SYSTEM.md): Principios de diseño del cuaderno de explorador moderno.
+  * [COLOR_SYSTEM.md](docs/design/COLOR_SYSTEM.md): Paleta oficial y roles semánticos.
+  * [TYPOGRAPHY.md](docs/design/TYPOGRAPHY.md): Escala tipográfica editorial y científica.
+  * [COMPONENT_LIBRARY.md](docs/design/COMPONENT_LIBRARY.md): Catálogo de componentes táctiles.
+  * [HOME_CONCEPT.md](docs/design/HOME_CONCEPT.md): Concepto espacial del Campamento Base.
+  * [CARD_ART_DIRECTION.md](docs/design/CARD_ART_DIRECTION.md): Dirección artística de la Card.
+  * [MOTION_GUIDELINES.md](docs/design/MOTION_GUIDELINES.md): Filosofía de movimiento y coreografía.
 * [ARCHITECTURE.md](docs/ARCHITECTURE.md): Principios de ingeniería y Clean Architecture.
 * [ROADMAP.md](docs/ROADMAP.md): Fases de desarrollo previstas y progreso actual.
 * [DECISIONS.md](docs/DECISIONS.md): Registro histórico de decisiones de producto y arquitectura (ADR).

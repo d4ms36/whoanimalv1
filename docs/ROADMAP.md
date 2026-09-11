@@ -22,12 +22,12 @@
   * Establecimiento del principio 100% Pet Friendly y formulación de *The Who Animal Test*.
   * Creación de Historias de Usuario mínimas y Criterios de Aceptación de producto.
 
-* [x] **Fase 2: WHO-V1-002 — Experience Architecture & Visual Foundation (Actual)**
-  * Definición del Lenguaje Visual del Explorador Naturalista (`VISUAL_LANGUAGE.md`).
-  * Formalización de la Arquitectura Espacial de la Home / Campamento Base (`HOME_ARCHITECTURE.md`).
-  * Especificación de Tokens Preliminares de Color, Tipografía, Espaciado y Elevación (`DESIGN_TOKENS.md`).
-  * Dirección Artística de la Card coleccionable como lámina física de naturalista (`CARD_ART_DIRECTION.md`).
-  * Mapeo Emocional y Filosofía Sensorial (`EMOTION_MAP.md`).
+* [x] **Fase 2: WHO-V1-002 — Design System & Art Direction Foundation (Actual)**
+  * Creación del Sistema de Diseño Oficial en `docs/design/` ("Cuaderno de explorador moderno que cobra vida").
+  * Formalización de `COLOR_SYSTEM.md`, `TYPOGRAPHY.md`, `COMPONENT_LIBRARY.md`, `HOME_CONCEPT.md`, `CARD_ART_DIRECTION.md` y `MOTION_GUIDELINES.md`.
+  * Definición de la arquitectura espacial del Campamento Base (TECHO, PECHO, ABDOMEN, PELVIS, PIES).
+  * Eliminación terminante del naranja dominante y rechazo de dashboards, HUDs, neón y gacha.
+  * Registro de decisiones de diseño DEC-V1-014 a DEC-V1-019.
 
 * [ ] **Fase 3: WHO-V1-003 — Architecture & Core Domain Modeling**
   * Inicialización del proyecto Android limpio sin deuda técnica.

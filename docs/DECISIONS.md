@@ -131,3 +131,27 @@ Este documento registra formalmente las decisiones de arquitectura, producto y e
 * **Contexto:** La carta debe sentirse como una pieza de colección personal y no como un componente genérico de software.
 * **Decisión:** La Card se diseña en proporción 5:7 evocando una lámina de naturalista en cartulina mate de 300 g/m², encuadrando la foto real del usuario y delimitando con pulcritud los tres pilares (Científico, Experiencia y Lore señalizado).
 * **Impacto:** Máximo valor emocional de la recompensa sin recurrir a neones, efectos gacha ni saturación visual.
+
+---
+
+## DEC-V1-017: Adopción del Sistema de Diseño Oficial "Cuaderno de Explorador Moderno"
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** Se requiere estructurar formalmente la dirección visual del producto en especificaciones modulares para guiar el futuro desarrollo UI.
+* **Decisión:** Se adopta formalmente la suite documental `docs/design/` como el sistema de diseño oficial de Who Animal v1, bajo la premisa creativa de "Un cuaderno de explorador moderno que cobra vida".
+* **Impacto:** Establece las directrices vinculantes para componentes, color, tipografía y movimiento.
+
+---
+
+## DEC-V1-018: Catálogo Oficial de Componentes Táctiles y Físicas de Resorte
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** La interfaz debe sentirse física, táctil y orgánica al tacto, evitando componentes genéricos o comportamientos rígidos.
+* **Decisión:** Se especifican formalmente los componentes `HeroDiscoverButton`, `NaturalistCard`, `FieldViewfinder`, `TaxonomyChip`, `JournalSnippet`, `BackpackTrigger` y `ObjectiveCautionBadge`, regidos por físicas de resorte (Spring Physics) sin rebotes excesivos.
+* **Impacto:** Experiencia de usuario consistente, serena y de alta fidelidad táctil.
+
+---
+
+## DEC-V1-019: Coreografía de Tres Tiempos en la Revelación de Especies
+* **Estado:** PROPOSED (WHO-V1-002)
+* **Contexto:** El descubrimiento es el momento cumbre emocional del producto y no debe vulgarizarse con animaciones de casino ni aparecer de golpe.
+* **Decisión:** La revelación se coreografía en tres tiempos sucesivos: 1. Pausa de enfoque (200ms), 2. Revelación de identidad zoológica (300ms) y 3. Materialización táctil de la Card (350ms). Se prohíben ruletas, confeti y cofres temblorosos.
+* **Impacto:** Respeto al ritmo naturalista y solemnidad en el momento del hallazgo.
