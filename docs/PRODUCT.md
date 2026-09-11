@@ -1,43 +1,77 @@
-# PRODUCT — Pilares y Reglas de Producto
+# PRODUCT — Pilares, Reglas de Producto y Filtro de Diseño
 
 > **WHO Animal v1**  
 > `STATUS: FOUNDATION / DRAFT`
 
 ---
 
-## 1. Pilares Fundamentales del Producto
-
-Who Animal v1 se fundamenta en seis pilares innegociables:
+## 1. Los Seis Pilares Innegociables
 
 ### 1. Descubrimiento
-La aplicación debe despertar una curiosidad genuina y continua. El acto de descubrir debe sentirse mágico, educativo y gratificante en cada interacción.
+El producto debe alimentar la curiosidad constante. Cada salida a la calle o al parque contiene la promesa de una revelación. El descubrimiento es el corazón del proyecto.
 
 ### 2. Exploración
-El usuario debe sentirse como un verdadero explorador buscando fauna en el entorno real, no como alguien interactuando con un menú administrativo o una base de datos estática.
+El usuario se siente un explorador en el mundo real. La aplicación nunca compite con el entorno físico; actúa como una ventana y una bitácora que complementa la salida al aire libre.
 
 ### 3. Identificación
-La fotografía de campo es el puente para revelar qué animal se ha encontrado. La identificación es el detonante del conocimiento, no el destino final.
+La fotografía de campo permite interrogar a la naturaleza. La identificación aporta conocimiento accesible, riguroso y honesto, reconociendo siempre el margen de error natural de la visión artificial.
 
 ### 4. Colección
-Cada encuentro identificado y validado puede convertirse en una pieza coleccionable con identidad, estética y valor personal.
+Cada encuentro validado se transforma en una pieza coleccionable con identidad, estética táctil y valor duradero. La colección es la prueba viva de las vivencias del explorador.
 
 ### 5. RPG Ligero
-El componente RPG debe vivirse principalmente en la recompensa, la progresión visual y la colección de cartas. **No debe manifestarse como un HUD invasivo** ni sobrecargar la pantalla con estadísticas o barras complejas.
+El componente RPG aporta sentido de trascendencia, orgullo y narrativa sin sobrecargar al usuario. **Vive en la Card y en la Mochila, jamás en la Home**.
+* **Qué SÍ pertenece:** El arte cuidado de la carta, los marcos temáticos, el nombre común y científico, citas de campo, la fecha y contexto del encuentro, insignias sutiles de naturalista.
+* **Qué queda FUERA:** Barras de vida (HP), puntos de magia (MP), barras de energía, niveles numéricos de combate, cooldowns artificiales, monedas virtuales y tiendas de microtransacciones.
 
 ### 6. 100% Pet Friendly y Bienestar Animal
-El bienestar, respeto y protección de la fauna tienen prioridad absoluta sobre cualquier dinámica lúdica:
-* Prohibición terminante de incentivar persecución, captura física, estrés, manipulación indebida o alteración de hábitats.
-* Fomentar la observación responsable, la conservación y el cuidado del medio natural.
-* Los avisos de precaución o peligro deben ser objetivos, educativos y preventivos, nunca alarmistas ni promotores de pánico.
+Principio rector inquebrantable. El respeto a la fauna antecede a cualquier decisión estética o mecánica de juego.
 
 ---
 
-## 2. Límites y Exclusiones de Producto (Non-Goals Iniciales)
+## 2. Implementación del Principio 100% Pet Friendly
 
-Para mantener el foco y evitar deuda técnica, queda explícitamente descartado implementar en esta fase:
-* Mecánicas de combate o batallas (PVP / PVE).
-* Economía invasiva, monedas virtuales, gemas o tiendas integradas.
-* Elementos gacha o sistemas probabilísticos de casino.
-* HUDs con barras de HP, MP, energía o niveles numéricos agobiantes.
-* Autenticación forzada o dependencias de backend en etapas iniciales.
-* Funcionalidades sociales complejas o trading prematuro.
+El bienestar animal se traduce en pautas operativas obligatorias:
+
+1. **Lenguaje Respetuoso:**
+   * Utilizar verbos como *avistar, observar, descubrir, registrar, contemplar, aprender*.
+   * Prohibido utilizar términos de sometimiento o captura: *cazar, atrapar, capturar, domar, enjaular, vencer*.
+2. **Fotografía e Interacción Responsable:**
+   * Promover activamente la distancia prudente de observación mediante consejos contextuales.
+   * Prohibir el uso de flash directo hacia los ojos de animales sensibles.
+   * Fomentar el silencio y el sigilo, desalentando movimientos bruscos o persecuciones.
+3. **Fauna Silvestre vs. Mascotas / Animales Domésticos:**
+   * **Fauna silvestre:** Foco en no intervención, respeto estricto a nidos, madrigueras y crías. Recordar que los animales silvestres no deben ser tocados ni alimentados con comida humana.
+   * **Animales domésticos:** Foco en tenencia responsable, cariño, respeto a su espacio personal y consentimiento del tutor o del animal antes de interactuar.
+4. **Privacidad y Conservación (Anti-Furtivismo):**
+   * En caso de especies amenazadas o vulnerables (listadas en la Lista Roja de la UICN), el producto **no debe publicar ni almacenar coordenadas geográficas de alta precisión** que faciliten la localización ilícita o el acoso turístico.
+5. **Comportamientos Prohibidos que la App Jamás Incentivará:**
+   * Perseguir o acorralar a un animal para mejorar el encuadre fotográfico.
+   * Manipular o extraer ejemplares de su hábitat natural.
+   * Ofrecer comida perjudicial para forzar acercamientos.
+   * Molestar a animales durante su descanso, alimentación o reproducción.
+
+---
+
+## 3. THE WHO ANIMAL TEST (Filtro Anti-Feature-Creep)
+
+Cualquier propuesta futura de diseño, funcionalidad o mecánica deberá responder afirmativamente a este decálogo de preguntas de control antes de ser considerada para implementación:
+
+1. **¿Refuerza la exploración real y la curiosidad por el entorno físico?**  
+   *(Si ata al usuario al sofá o a menús virtuales desconectados del mundo real, se descarta).*
+2. **¿Hace que el momento del descubrimiento sea emocionante y memorable?**  
+   *(Si convierte el hallazgo en un trámite automático y desprovisto de asombro, se descarta).*
+3. **¿Transforma el encuentro en una pieza coleccionable con identidad y valor personal?**  
+   *(Si genera un registro genérico y reemplazable de base de datos, se descarta).*
+4. **¿Mantiene el RPG ligero y sereno, libre de barras de salud, combates o agobio numérico?**  
+   *(Si convierte la app en un RPG de grindeo o competición táctica, se descarta).*
+5. **¿Es 100% Pet Friendly y educa en el respeto y conservación de la fauna?**  
+   *(Si existe el más mínimo riesgo de promover acoso animal o alteración de hábitats, se descarta).*
+6. **¿Comunica la identificación con honestidad científica ("la IA puede equivocarse")?**  
+   *(Si finge infalibilidad o induce a error al usuario presentándolo como verdad absoluta, se descarta).*
+7. **¿Preserva una estética natural, táctil y moderna, alejada de dashboards corporativos o casinos gacha?**  
+   *(Si añade barras de progreso chillonas, monedas virtuales o elementos de ludopatía, se descarta).*
+8. **¿Mantiene la Home despejada como campamento base sin invadirla con menús secundarios?**  
+   *(Si llena la pantalla inicial de accesos directos, widgets o notificaciones ansiosas, se descarta).*
+9. **¿Hace la experiencia más especial y significativa, o únicamente más compleja e inflada?**  
+   *(Si agrega fricción cognitiva o burocracia sin enriquecer el corazón del descubrimiento, se descarta).*

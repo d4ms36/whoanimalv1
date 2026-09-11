@@ -3,26 +3,26 @@
 > **WHO Animal v1**  
 > `STATUS: FOUNDATION / DRAFT`
 
-Este documento registra formalmente las decisiones fundacionales de Who Animal v1.
+Este documento registra formalmente las decisiones de arquitectura, producto y experiencia de Who Animal v1.
 
 ---
 
 ## DEC-V1-001: Independencia del Proyecto
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** Existía un prototipo previo (`whoanimal`) con código experimental y deuda técnica acumulada.
 * **Decisión:** Who Animal v1 es un proyecto completamente nuevo e independiente, alojado en su propio repositorio `whoanimalv1`.
 
 ---
 
 ## DEC-V1-002: Prototipo Anterior como Fuente de Conocimiento
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** Se requiere aprovechar los aciertos conceptuales sin arrastrar dependencias ni errores de código del pasado.
 * **Decisión:** El prototipo anterior se utiliza exclusivamente como fuente de conocimiento, lecciones aprendidas y decisiones validadas; queda terminantemente prohibido copiar código fuente o assets directamente.
 
 ---
 
 ## DEC-V1-003: Experiencia Central (Core Loop)
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** El producto debe tener un bucle principal de interacción claro y emocionante.
 * **Decisión:** La experiencia central se define formalmente como:
   ```text
@@ -32,27 +32,78 @@ Este documento registra formalmente las decisiones fundacionales de Who Animal v
 ---
 
 ## DEC-V1-004: Home como Expedición
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** Muchos productos caen en la trampa de parecer paneles de control o dashboards bancarios.
 * **Decisión:** La Home de Who Animal v1 se conceptualiza como el campamento base de una expedición natural al aire libre y no como un dashboard administrativo.
 
 ---
 
 ## DEC-V1-005: Metáfora Espacial de la Home
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** Es necesario ordenar los elementos de la Home con coherencia emocional.
 * **Decisión:** Se adopta la metáfora TECHO / PECHO / ABDOMEN / PELVIS / PIES como guía conceptual de jerarquía visual (atmósfera, corazón de descubrimiento, hallazgos recientes, mochila y herramientas secundarias). No debe interpretarse de manera literal como una figura anatómica humana en la UI.
 
 ---
 
 ## DEC-V1-006: Descarte del Naranja como Color Dominante
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** La dirección visual busca evocar calma, naturaleza y exploración serena.
 * **Decisión:** El color naranja queda explícitamente descartado como color dominante en la dirección cromática principal. Se adoptan tonos inspirados en Mist, Sage, Deep Teal, Forest, Stone y Cream.
 
 ---
 
 ## DEC-V1-007: RPG Ligero sin Saturación de HUD
-* **Estado:** APROBADA (Foundation)
+* **Estado:** APPROVED (Foundation)
 * **Contexto:** Los elementos de gamificación deben aportar valor emocional sin generar estrés cognitivo.
 * **Decisión:** El componente RPG será ligero y residirá en el valor de la recompensa y en la belleza de la Card coleccionable, no en la saturación de barras de HP/MP, monedas o estadísticas en la Home.
+
+---
+
+## DEC-V1-008: Desacoplamiento Ontológico de Dominio
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** El prototipo anterior sufrió confusiones al mezclar la observación física, la hipótesis de IA y la carta resultante en modelos sobrecargados.
+* **Decisión:** Se adopta la ontología formal `Observation ≠ IdentificationResult ≠ Decision ≠ Capture ≠ Card` y `Animal ≠ Capture ≠ Card`. Cada concepto modela una entidad y fase distinta del ciclo de vida.
+* **Impacto:** Claridad absoluta en el modelado de datos en Kotlin y desacoplamiento limpio entre cámara, visión por computadora y colección.
+
+---
+
+## DEC-V1-009: Principio de Falibilidad y Honestidad de la Identificación
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** Los modelos de visión artificial no son 100% infalibles en condiciones cambiantes de luz y campo. Presentar una inferencia incierta como dogma frustra al usuario y desinforma.
+* **Decisión:** La aplicación asume formalmente el principio *"La aplicación puede equivocarse"*. La identificación se presenta como una hipótesis asistida con grados cualitativos de confianza y alternativas, permitiendo registrar avistamientos no catalogados.
+* **Impacto:** Confianza duradera del usuario y rigor educativo en el producto.
+
+---
+
+## DEC-V1-010: Separación Estricta de los Tres Pilares en la Card
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** Añadir fantasía o narrativa lúdica puede confundir al usuario sobre la verdadera biología de la fauna.
+* **Decisión:** Cada carta debe mantener contenedores estrictamente delimitados para:
+  1. Información Científica (Factual).
+  2. Experiencia del Encuentro (Personal).
+  3. Lore Lúdico (Narrativa de ficción, obligatoriamente señalizada con advertencia visible).
+* **Impacto:** Armonía entre rigor educativo y fascinación lúdica sin desinformar.
+
+---
+
+## DEC-V1-011: Arquitectura Local-First para el MVP
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** Obligar a crear cuentas, autenticarse y depender de un backend complejo en la primera versión retrasa la validación del bucle central y genera fricción de entrada.
+* **Decisión:** El MVP será estrictamente Local-First. Las observaciones, capturas y cartas se almacenarán y gestionarán de forma local en el dispositivo del usuario.
+* **Impacto:** Experiencia inmediata sin fricción de login y simplificación radical de la arquitectura inicial.
+
+---
+
+## DEC-V1-012: Adopción del Filtro "The Who Animal Test"
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** Es común en aplicaciones móviles acumular funciones secundarias (tiendas, monedas, rankings) que diluyen la propuesta de valor.
+* **Decisión:** Toda funcionalidad futura debe superar el decálogo de control *The Who Animal Test* para ser autorizada e implementada.
+* **Impacto:** Blindaje del producto contra el feature-creep y mantenimiento de la pureza de la experiencia.
+
+---
+
+## DEC-V1-013: Protocolo de Privacidad Geográfica en Especies Vulnerables
+* **Estado:** PROPOSED (WHO-V1-001)
+* **Contexto:** Publicar o almacenar ubicaciones exactas de especies en peligro de extinción puede facilitar la caza furtiva o el acoso de hábitats sensibles.
+* **Decisión:** En cumplimiento del principio 100% Pet Friendly, cualquier especie categorizada como vulnerable o amenazada en la Lista Roja de la UICN omitirá coordenadas GPS de alta resolución en sus metadatos y exportaciones.
+* **Impacto:** Protección efectiva de la fauna silvestre y coherencia ética total del producto.
