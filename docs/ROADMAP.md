@@ -29,10 +29,14 @@
   * Eliminación terminante del naranja dominante y rechazo de dashboards, HUDs, neón y gacha.
   * Registro de decisiones de diseño DEC-V1-014 a DEC-V1-019.
 
-* [ ] **Fase 3: WHO-V1-003 — Architecture & Core Domain Modeling**
-  * Inicialización del proyecto Android limpio sin deuda técnica.
-  * Modelado puro en Kotlin de las entidades de dominio y casos de uso.
-  * Pruebas unitarias de las invariantes de dominio.
+* [x] **Fase 3: WHO-V1-003 — Architecture & Core Domain Modeling (Actual)**
+  * Formalización de la Arquitectura Limpia en `docs/architecture/` (`ARCHITECTURE_OVERVIEW.md`).
+  * Modelado formal de las 7 entidades de dominio y distinciones ontológicas (`DOMAIN_MODEL.md`).
+  * Especificación de módulos desacoplados `:core:domain`, `:core:designsystem`, `:data:*`, `:feature:*` (`MODULE_STRUCTURE.md`).
+  * Establecimiento de Reglas de Dependencia e Inversión de Control (`DEPENDENCY_RULES.md`).
+  * Formalización del Pipeline Irreversible de Descubrimiento (`DATA_FLOW.md`).
+  * Catálogo formal de Casos de Uso maestros (`USE_CASES.md`).
+  * Registro de decisiones arquitectónicas DEC-V1-020 a DEC-V1-023.
 
 * [ ] **Fase 4: WHO-V1-004 — Capture & Identification Flow**
   * Integración del visor de cámara limpio y respetuoso.

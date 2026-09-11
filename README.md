@@ -32,7 +32,7 @@ Construir un producto limpio, estable, modular y 100% *Pet Friendly*, enfocado e
 
 ## 4. Estado Actual
 
-* **Fase Actual:** `WHO-V1-002 — DESIGN SYSTEM & ART DIRECTION FOUNDATION`
+* **Fase Actual:** `WHO-V1-003 — ARCHITECTURE & CORE DOMAIN MODELING`
 * **Condición:** Especificación de producto, experiencia, MVP y ontología de dominio completada en fase documental.
 * **Código de aplicación:** Ninguno (no se ha creado código Android ni UI en esta fase de definición).
 
@@ -75,7 +75,14 @@ Toda la documentación base se encuentra centralizada en el directorio [`/docs`]
   * [HOME_CONCEPT.md](docs/design/HOME_CONCEPT.md): Concepto espacial del Campamento Base.
   * [CARD_ART_DIRECTION.md](docs/design/CARD_ART_DIRECTION.md): Dirección artística de la Card.
   * [MOTION_GUIDELINES.md](docs/design/MOTION_GUIDELINES.md): Filosofía de movimiento y coreografía.
-* [ARCHITECTURE.md](docs/ARCHITECTURE.md): Principios de ingeniería y Clean Architecture.
+* [docs/architecture/](docs/architecture/): Suite oficial de Arquitectura de Software:
+  * [ARCHITECTURE_OVERVIEW.md](docs/architecture/ARCHITECTURE_OVERVIEW.md): Principios de Clean Architecture y fundamentos.
+  * [DOMAIN_MODEL.md](docs/architecture/DOMAIN_MODEL.md): Ontología de dominio formalizada y entidades.
+  * [MODULE_STRUCTURE.md](docs/architecture/MODULE_STRUCTURE.md): Estructura modular del proyecto.
+  * [DEPENDENCY_RULES.md](docs/architecture/DEPENDENCY_RULES.md): Reglas de dependencia e inversión de control.
+  * [DATA_FLOW.md](docs/architecture/DATA_FLOW.md): Pipeline irreversible de descubrimiento.
+  * [USE_CASES.md](docs/architecture/USE_CASES.md): Catálogo de casos de uso e interactors.
+* [ARCHITECTURE.md](docs/ARCHITECTURE.md): Principios iniciales de ingeniería.
 * [ROADMAP.md](docs/ROADMAP.md): Fases de desarrollo previstas y progreso actual.
 * [DECISIONS.md](docs/DECISIONS.md): Registro histórico de decisiones de producto y arquitectura (ADR).
 * [WORKFLOW.md](docs/WORKFLOW.md): Dinámica operativa y protocolo de trabajo.

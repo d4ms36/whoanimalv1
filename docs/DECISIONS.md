@@ -155,3 +155,35 @@ Este documento registra formalmente las decisiones de arquitectura, producto y e
 * **Contexto:** El descubrimiento es el momento cumbre emocional del producto y no debe vulgarizarse con animaciones de casino ni aparecer de golpe.
 * **Decisión:** La revelación se coreografía en tres tiempos sucesivos: 1. Pausa de enfoque (200ms), 2. Revelación de identidad zoológica (300ms) y 3. Materialización táctil de la Card (350ms). Se prohíben ruletas, confeti y cofres temblorosos.
 * **Impacto:** Respeto al ritmo naturalista y solemnidad en el momento del hallazgo.
+
+---
+
+## DEC-V1-020: Clean Architecture Foundation
+* **Estado:** PROPOSED (WHO-V1-003)
+* **Contexto:** Se requiere una arquitectura modular y desacoplada que evite la deuda técnica del prototipo histórico y permita evolucionar el producto de forma sostenible.
+* **Decisión:** Who Animal v1 adopta formalmente Clean Architecture con estricta inversión de dependencias: Presentation y Data dependen de Domain; Domain no depende de ninguna capa externa.
+* **Impacto:** Código desacoplado, alta testabilidad de la lógica zoológica y protección contra cambios de frameworks.
+
+---
+
+## DEC-V1-021: Dominio Independiente de Android
+* **Estado:** PROPOSED (WHO-V1-003)
+* **Contexto:** El núcleo biológico y las reglas de las cartas deben ser puras y no verse contaminadas por el ciclo de vida de Android o librerías de UI.
+* **Decisión:** El módulo `:core:domain` será Kotlin puro (JVM / KMP ready) con cero dependencias de `android.*`, `androidx.*`, Compose o Room. Toda integración de infraestructura se realiza mediante interfaces e inversión de control.
+* **Impacto:** Posibilidad de ejecutar pruebas unitarias ultrarrápidas sin emulador y preparación para un futuro multiplataforma.
+
+---
+
+## DEC-V1-022: Fundación de Producto Local-First
+* **Estado:** PROPOSED (WHO-V1-003)
+* **Contexto:** El acto de explorar la naturaleza ocurre con frecuencia en zonas con cobertura móvil deficiente (bosques, parques, senderos). Obligar a conectividad permanente arruina la experiencia de campo.
+* **Decisión:** El almacenamiento y la experiencia de Who Animal v1 son estrictamente Local-First. Las observaciones, capturas y la mochila de cartas se persisten en el almacenamiento local del dispositivo como fuente única de verdad.
+* **Impacto:** Funcionamiento sin fisuras fuera de línea, inmediatez de respuesta y cero fricción de autenticación en el MVP.
+
+---
+
+## DEC-V1-023: Flujo de Datos Controlado e Irreversible
+* **Estado:** PROPOSED (WHO-V1-003)
+* **Contexto:** En el prototipo previo se producían estados inconsistentes al intentar generar cartas sin capturas válidas o sin decisiones explícitas.
+* **Decisión:** El ciclo de descubrimiento opera como un pipeline estricto de avance unidireccional: Observation → IdentificationResult → IdentificationDecision → Capture → Card → Collection. Ninguna entidad posterior puede crearse sin la existencia y validación de la anterior.
+* **Impacto:** Integridad transaccional absoluta en el ciclo de vida del descubrimiento y prevención de estados corruptos.
