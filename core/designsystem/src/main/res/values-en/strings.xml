@@ -28,6 +28,22 @@
     <string name="home_backpack_label">Explorer\'s Backpack</string>
     <string name="home_view_playground">Design Lab (Dev)</string>
 
+    <!-- Capture & Viewfinder Flow -->
+    <string name="capture_title">Field Viewfinder</string>
+    <string name="capture_subtitle">Wildlife observation window</string>
+    <string name="capture_permission_title">Camera Permission Required</string>
+    <string name="capture_permission_rationale">WHO Animal uses the camera respectfully to frame and record your wildlife sightings as a living field journal.</string>
+    <string name="capture_permission_grant_button">Allow Camera Access</string>
+    <string name="capture_permission_denied_message">Camera access is denied. Please enable camera permission in device Settings to observe wildlife.</string>
+    <string name="capture_camera_unavailable">Camera is unavailable on this device or an error occurred initializing camera hardware.</string>
+    <string name="capture_button_description">Trigger viewfinder and record observation</string>
+    <string name="capture_observation_success_title">Observation Recorded</string>
+    <string name="capture_observation_success_desc">A new empirical Observation has been recorded with your photograph and environmental context.</string>
+    <string name="capture_action_continue">Back to Base Camp</string>
+    <string name="capture_action_retake">New Sighting</string>
+    <string name="capture_error_title">Capture Error</string>
+    <string name="capture_error_generic">Could not save photograph to device local storage.</string>
+
     <!-- Card System & The 3 Pillars -->
     <string name="card_action_flip_to_details">Inspect Reverse</string>
     <string name="card_action_flip_to_front">View Front Plate</string>

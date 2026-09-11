@@ -200,3 +200,29 @@ Este documento registra formalmente las decisiones de arquitectura, producto y e
   4. Los formatos de fecha, hora, coordenadas y cifras numéricas deben respetar las configuraciones regionales del dispositivo del usuario mediante `DateFormat` y `NumberFormat`.
 * **Impacto:** Arquitectura de presentación internacionalizada y limpia, eliminación de deuda técnica en localización y garantía de soporte idiomático simétrico en todas las fases del producto.
 
+---
+
+## DEC-V1-025: CameraX Architecture & Viewfinder as Nature Window
+* **Estado:** APPROVED (WHO-V1-004B)
+* **Contexto:** El acto fundacional de exploración zoológica requiere un visor de cámara inmediato, ligero y sereno. En prototipos históricos se acopló la cámara al modelo de datos y se sobrecargó la pantalla con HUDs tácticos y falsas inferencias inmediatas.
+* **Decisión:**
+  1. CameraX se aísla estrictamente en las capas `:data:camera` y `:feature:capture`. El núcleo `:core:domain` permanece en Kotlin puro y agnóstico de hardware o librerías de imagen (`DEC-V1-021`).
+  2. La captura produce exclusivamente una entidad empírica `Observation` (imagen, timestamp, contexto ambiental). Queda terminantemente prohibido convertir la foto directamente en `Animal`, `Capture` o `Card`.
+  3. El visor `FieldViewfinder` se diseña como una ventana silenciosa hacia la naturaleza: cuatro trazos sutiles en tono Cream al 60%, sin retículas militares, lecturas láser, porcentajes analíticos ni elementos de HUD cibernético.
+  4. La frontera con la futura identificación se formaliza como interfaz de servicio (`IdentificationEngineService`) sin introducir algoritmos simulados ni clasificaciones fingidas en esta fase.
+* **Impacto:** Arquitectura desacoplada, preservación del respeto y la calma visual en la experiencia de campo, e integridad absoluta del pipeline ontológico irreversible.
+
+
+
+---
+
+## DEC-V1-026: Correccion Arquitectonica - feature:capture Desacoplado de data:camera
+* **Estado:** APPROVED (WHO-V1-004B Architectural Correction)
+* **Contexto:** La implementacion inicial de WHO-V1-004B introdujo una dependencia directa de `:feature:capture` en `CameraXManager` (`:data:camera`) y en clases de CameraX (`PreviewView`), violando la regla Presentation to Domain to Data.
+* **Problema detectado por PM:** `eature:capture` orquestaba la captura directamente contra `CameraXManager`, saltandose la capa de dominio como mediador.
+* **Decision:**
+  1. **`CaptureScreen` recibe `CaptureObservationUseCase`** (dominio) en lugar de `RecordObservationUseCase`. El use case orquesta internamente `CameraCaptureService` (contrato de dominio) + `RecordObservationUseCase`. `eature:capture` no sabe que existe CameraX.
+  2. **Slot composable para el preview:** `CaptureScreen` recibe el visor de camara como parametro lambda `@Composable (onReady, onError, modifier) -> Unit`. La instancia concreta (`CameraXPreviewView` de `:data:camera`) es inyectada desde `:app` (composition root).
+  3. **`:app` como composition root explicito:** `MainActivity` instancia `CameraXManager` (como `CameraCaptureService`), construye `CaptureObservationUseCase` y provee `CameraXPreviewView` como slot al `CaptureScreen`. Patron de DI manual vigente hasta la eventual introduccion de Hilt.
+  4. **`:feature:capture` sin dependencias de datos:** El modulo depende exclusivamente de `:core:domain`, `:core:common` y `:core:designsystem`. Cero imports de `com.whoanimal.data.*` o `ndroidx.camera.*`.
+* **Impacto:** Regla arquitectonica `Presentation to Domain to Data` restaurada y reforzada. El feature es testeable con implementaciones stub del use case sin necesidad de hardware de camara.

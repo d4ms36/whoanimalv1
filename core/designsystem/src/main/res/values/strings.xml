@@ -28,6 +28,22 @@
     <string name="home_backpack_label">Mochila del Explorador</string>
     <string name="home_view_playground">Laboratorio de Diseño (Dev)</string>
 
+    <!-- Capture & Viewfinder Flow -->
+    <string name="capture_title">Visor de Campo</string>
+    <string name="capture_subtitle">Ventana de observación de fauna</string>
+    <string name="capture_permission_title">Permiso de Cámara Requerido</string>
+    <string name="capture_permission_rationale">WHO Animal utiliza la cámara de forma respetuosa para encuadrar y registrar tus avistamientos como un cuaderno de campo vivo.</string>
+    <string name="capture_permission_grant_button">Permitir Acceso a la Cámara</string>
+    <string name="capture_permission_denied_message">El acceso a la cámara está denegado. Habilita el permiso de cámara en los Ajustes del dispositivo para observar fauna.</string>
+    <string name="capture_camera_unavailable">La cámara no está disponible en este dispositivo o ha ocurrido un error al inicializar el hardware.</string>
+    <string name="capture_button_description">Disparar visor y registrar observación</string>
+    <string name="capture_observation_success_title">Observación Registrada</string>
+    <string name="capture_observation_success_desc">Se ha registrado una nueva Observación empírica con tu fotografía y contexto ambiental.</string>
+    <string name="capture_action_continue">Volver al Campamento</string>
+    <string name="capture_action_retake">Nuevo Avistamiento</string>
+    <string name="capture_error_title">Fallo al Capturar</string>
+    <string name="capture_error_generic">No se pudo guardar la fotografía en el almacenamiento local del dispositivo.</string>
+
     <!-- Card System & The 3 Pillars -->
     <string name="card_action_flip_to_details">Inspeccionar Reverso</string>
     <string name="card_action_flip_to_front">Ver Lámina Frontal</string>

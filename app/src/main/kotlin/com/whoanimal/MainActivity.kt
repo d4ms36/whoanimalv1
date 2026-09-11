@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -43,42 +42,124 @@ import com.whoanimal.core.designsystem.component.HeroDiscoverButton
 import com.whoanimal.core.designsystem.component.JournalSnippet
 import com.whoanimal.core.designsystem.theme.WhoAnimalPalette
 import com.whoanimal.core.designsystem.theme.WhoAnimalTheme
+import com.whoanimal.core.domain.model.Observation
+import com.whoanimal.core.domain.usecase.CaptureObservationUseCase
+import com.whoanimal.core.domain.usecase.RecordObservationUseCase
+import com.whoanimal.data.camera.CameraXManager
+import com.whoanimal.data.camera.CameraXPreviewView
+import com.whoanimal.data.camera.InMemoryObservationRepository
+import com.whoanimal.feature.capture.CaptureScreen
 import com.whoanimal.feature.playground.DesignPlaygroundScreen
 
+enum class AppDestination {
+    BASE_CAMP,
+    CAPTURE,
+    PLAYGROUND
+}
+
+/**
+ * MainActivity — Composition Root.
+ *
+ * Architectural responsibility:
+ * - Instantiates concrete implementations from :data:camera.
+ * - Wires domain use cases with their data implementations (poor man's DI).
+ * - Provides CameraXPreviewView as a composable slot to CaptureScreen,
+ *   keeping :feature:capture free of CameraX and :data:camera imports.
+ *
+ * Dependency graph wired here:
+ *   CameraXManager (CameraCaptureService impl)
+ *       └──► CaptureObservationUseCase
+ *                └──► RecordObservationUseCase
+ *                         └──► InMemoryObservationRepository (ObservationRepository impl)
+ */
 class MainActivity : ComponentActivity() {
+
+    private val observationRepository by lazy { InMemoryObservationRepository() }
+    private val recordObservationUseCase by lazy { RecordObservationUseCase(observationRepository) }
+
+    // CameraXManager is the concrete CameraCaptureService implementation.
+    // Lives in :data:camera; wired here at the composition root.
+    private val cameraXManager by lazy { CameraXManager(this) }
+
+    private val captureObservationUseCase by lazy {
+        CaptureObservationUseCase(
+            cameraCaptureService = cameraXManager,
+            recordObservationUseCase = recordObservationUseCase
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             WhoAnimalTheme {
-                WhoAnimalApp()
+                WhoAnimalApp(
+                    captureObservationUseCase = captureObservationUseCase,
+                    cameraXManager = cameraXManager
+                )
             }
         }
     }
 }
 
 @Composable
-fun WhoAnimalApp() {
-    var isPlaygroundOpen by remember { mutableStateOf(false) }
+fun WhoAnimalApp(
+    captureObservationUseCase: CaptureObservationUseCase,
+    cameraXManager: CameraXManager
+) {
+    var currentDestination by remember { mutableStateOf(AppDestination.BASE_CAMP) }
+    var latestObservation by remember { mutableStateOf<Observation?>(null) }
 
-    // Design Playground accessible strictly in DEBUG builds
-    if (BuildConfig.DEBUG && isPlaygroundOpen) {
-        DesignPlaygroundScreen(
-            onNavigateBack = { isPlaygroundOpen = false }
-        )
-    } else {
-        BaseCampHomeScreen(
-            onOpenPlayground = {
-                if (BuildConfig.DEBUG) {
-                    isPlaygroundOpen = true
-                }
+    when (currentDestination) {
+        AppDestination.PLAYGROUND -> {
+            if (BuildConfig.DEBUG) {
+                DesignPlaygroundScreen(
+                    onNavigateBack = { currentDestination = AppDestination.BASE_CAMP }
+                )
+            } else {
+                currentDestination = AppDestination.BASE_CAMP
             }
-        )
+        }
+
+        AppDestination.CAPTURE -> {
+            CaptureScreen(
+                captureObservationUseCase = captureObservationUseCase,
+                // CameraXPreviewView is provided here as a composable slot.
+                // feature:capture receives a generic @Composable lambda — it has
+                // zero knowledge of CameraX or CameraXPreviewView internals.
+                cameraPreviewSlot = { onReady, onError, slotModifier ->
+                    CameraXPreviewView(
+                        cameraXManager = cameraXManager,
+                        modifier = slotModifier,
+                        onReady = onReady,
+                        onError = onError
+                    )
+                },
+                onNavigateBack = { currentDestination = AppDestination.BASE_CAMP },
+                onObservationCreated = { observation ->
+                    latestObservation = observation
+                }
+            )
+        }
+
+        AppDestination.BASE_CAMP -> {
+            BaseCampHomeScreen(
+                latestObservation = latestObservation,
+                onNavigateToCapture = { currentDestination = AppDestination.CAPTURE },
+                onOpenPlayground = {
+                    if (BuildConfig.DEBUG) {
+                        currentDestination = AppDestination.PLAYGROUND
+                    }
+                }
+            )
+        }
     }
 }
 
 @Composable
 private fun BaseCampHomeScreen(
+    latestObservation: Observation?,
+    onNavigateToCapture: () -> Unit,
     onOpenPlayground: () -> Unit
 ) {
     val scrollState = rememberScrollState()
@@ -99,7 +180,9 @@ private fun BaseCampHomeScreen(
             // ESTRATO TECHO: Atmósfera y Cabecera
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 16.dp)
             ) {
                 Icon(
                     imageVector = Icons.Rounded.Landscape,
@@ -126,13 +209,15 @@ private fun BaseCampHomeScreen(
                 )
             }
 
-            // ESTRATO PECHO: Corazón de Descubrimiento (Hero CTA)
+            // ESTRATO PECHO: Corazón de Descubrimiento (Hero CTA -> Viewfinder)
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 12.dp)
             ) {
                 HeroDiscoverButton(
-                    onClick = {}
+                    onClick = onNavigateToCapture
                 )
             }
 
@@ -146,12 +231,22 @@ private fun BaseCampHomeScreen(
                     style = WhoAnimalTheme.typography.titleMedium,
                     color = WhoAnimalTheme.colors.textPrimary
                 )
-                JournalSnippet(
-                    commonName = "Mirlo Común",
-                    scientificName = "Turdus merula",
-                    timeOrDateText = sampleTime,
-                    onClick = {}
-                )
+
+                if (latestObservation != null) {
+                    JournalSnippet(
+                        commonName = stringResource(id = R.string.capture_observation_success_title),
+                        scientificName = "ID: ${latestObservation.id.take(8)}…",
+                        timeOrDateText = sampleTime,
+                        onClick = onNavigateToCapture
+                    )
+                } else {
+                    JournalSnippet(
+                        commonName = "Mirlo Común",
+                        scientificName = "Turdus merula",
+                        timeOrDateText = sampleTime,
+                        onClick = onNavigateToCapture
+                    )
+                }
             }
 
             // ESTRATO PELVIS: Mochila del Explorador (Acceso y Contador)
@@ -186,7 +281,9 @@ private fun BaseCampHomeScreen(
                         contentColor = WhoAnimalTheme.colors.textPrimary
                     ),
                     shape = WhoAnimalTheme.shapes.pill,
-                    modifier = Modifier.fillMaxWidth().height(48.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(48.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Rounded.BugReport,
