@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common & App Identity -->
+    <string name="common_app_name">WHO Animal</string>
+    <string name="common_app_tagline">Descubre. Identifica. Colecciona.</string>
+    <string name="common_unknown_species">Especie no catalogada</string>
+    <string name="common_unknown_scientific">Incertae sedis</string>
+    <string name="common_caution_badge_title">Aviso de Campo Responsable</string>
+    <string name="common_caution_distance_format">Mantén una distancia mínima de %d metros por respeto y seguridad.</string>
+    <string name="common_action_close">Cerrar</string>
+    <string name="common_action_back">Volver</string>
+    <string name="common_action_confirm">Confirmar</string>
+    <string name="common_action_explore">Explorar</string>
+    <string name="common_status_least_concern">Preocupación Menor</string>
+    <string name="common_status_near_threatened">Casi Amenazado</string>
+    <string name="common_status_vulnerable">Vulnerable</string>
+    <string name="common_status_endangered">En Peligro</string>
+    <string name="common_status_critically_endangered">En Peligro Crítico</string>
+
+    <!-- Home Base Camp Strings -->
+    <string name="home_hero_discover_button">DESCUBRIR</string>
+    <string name="home_atmosphere_dawn">Campamento Base · Bruma del Amanecer</string>
+    <string name="home_atmosphere_day">Campamento Base · Día Abierto</string>
+    <string name="home_atmosphere_dusk">Campamento Base · Atardecer Dorado</string>
+    <string name="home_atmosphere_night">Campamento Base · Noche Serena</string>
+    <string name="home_recent_sightings_title">Bitácora Reciente</string>
+    <string name="home_empty_journal_message">Aún no hay avistamientos en este cuaderno. Pulsa DESCUBRIR para iniciar la expedición.</string>
+    <string name="home_backpack_label">Mochila del Explorador</string>
+    <string name="home_view_playground">Laboratorio de Diseño (Dev)</string>
+
+    <!-- Card System & The 3 Pillars -->
+    <string name="card_action_flip_to_details">Inspeccionar Reverso</string>
+    <string name="card_action_flip_to_front">Ver Lámina Frontal</string>
+    <string name="card_pillar_scientific_title">Pilar I: Información Científica</string>
+    <string name="card_pillar_experience_title">Pilar II: Experiencia del Encuentro</string>
+    <string name="card_pillar_lore_title">Pilar III: Lore y Mitos</string>
+    <string name="card_lore_disclaimer">AVISO: La siguiente narrativa pertenece a la ficción lúdica y a la tradición cultural popular. No constituye evidencia biológica ni sustituye a los hechos zoológicos.</string>
+    <string name="card_proportion_label">Lámina 5:7 en Cartulina Cream</string>
+    <string name="card_sighting_date_prefix">Avistado el</string>
+    <string name="card_location_protected">Ubicación protegida para salvaguardar el hábitat</string>
+
+    <!-- Collection & Backpack -->
+    <string name="collection_title">Mochila de Colección</string>
+    <string name="collection_empty_title">Mochila vacía</string>
+    <string name="collection_empty_description">Sal al exterior y descubre fauna silvestre o doméstica con rigor y serenidad.</string>
+    <string name="collection_filter_all">Todas las especies</string>
+    <string name="collection_filter_birds">Aves</string>
+    <string name="collection_filter_mammals">Mamíferos</string>
+    <string name="collection_filter_insects">Insectos</string>
+
+    <!-- Field Journal Edition (Future Screen Preparation) -->
+    <string name="journal_edition_title">Edición de Bitácora de Campo</string>
+    <string name="journal_notes_placeholder">Añade tus observaciones sobre el comportamiento, clima o contexto del encuentro…</string>
+    <string name="journal_save_action">Guardar Anotación</string>
+    <string name="journal_weather_label">Condiciones Atmosféricas</string>
+
+    <!-- Design Playground (Internal Dev Lab) -->
+    <string name="playground_title">Living Design Playground</string>
+    <string name="playground_subtitle">Laboratorio del Sistema de Diseño Oficial de WHO Animal v1</string>
+    <string name="playground_tab_palette">Paleta Nuclear</string>
+    <string name="playground_tab_typography">Tipografía Editorial</string>
+    <string name="playground_tab_components">Componentes Táctiles</string>
+    <string name="playground_tab_motion">Motion &amp; Coreografía</string>
+    <string name="playground_tab_bilingual">Bilingual &amp; Formatos</string>
+
+    <!-- Motion Demo Strings -->
+    <string name="motion_demo_title">Coreografía del Descubrimiento en 3 Tiempos</string>
+    <string name="motion_step_1_title">1. Pausa de Enfoque (200ms)</string>
+    <string name="motion_step_1_desc">El visor de campo asienta la imagen con un desenfoque sutil y orgánico.</string>
+    <string name="motion_step_2_title">2. Revelación de Identidad (300ms)</string>
+    <string name="motion_step_2_desc">El Nombre Común y Binomial ascienden suavemente con elevación vertical.</string>
+    <string name="motion_step_3_title">3. Materialización de la Carta (350ms)</string>
+    <string name="motion_step_3_desc">La lámina física en cartulina Cream se consolida con elasticidad de resorte.</string>
+    <string name="motion_action_trigger">Reproducir Coreografía de Revelación</string>
+    <string name="motion_spring_press_title">Física de Resortes Táctil (Presión a escala 97%)</string>
+
+    <!-- Plurals -->
+    <plurals name="collection_cards_count">
+        <item quantity="one">%d carta descubierta</item>
+        <item quantity="other">%d cartas descubiertas</item>
+    </plurals>
+    <plurals name="home_recent_count">
+        <item quantity="one">%d avistamiento reciente</item>
+        <item quantity="other">%d avistamientos recientes</item>
+    </plurals>
+    <plurals name="collection_species_count">
+        <item quantity="one">%d especie catalogada</item>
+        <item quantity="other">%d especies catalogadas</item>
+    </plurals>
+</resources>

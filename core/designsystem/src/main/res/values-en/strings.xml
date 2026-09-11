@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common & App Identity -->
+    <string name="common_app_name">WHO Animal</string>
+    <string name="common_app_tagline">Discover. Identify. Collect.</string>
+    <string name="common_unknown_species">Uncatalogued species</string>
+    <string name="common_unknown_scientific">Incertae sedis</string>
+    <string name="common_caution_badge_title">Responsible Field Caution</string>
+    <string name="common_caution_distance_format">Keep a minimum distance of %d meters for wildlife welfare and safety.</string>
+    <string name="common_action_close">Close</string>
+    <string name="common_action_back">Back</string>
+    <string name="common_action_confirm">Confirm</string>
+    <string name="common_action_explore">Explore</string>
+    <string name="common_status_least_concern">Least Concern</string>
+    <string name="common_status_near_threatened">Near Threatened</string>
+    <string name="common_status_vulnerable">Vulnerable</string>
+    <string name="common_status_endangered">Endangered</string>
+    <string name="common_status_critically_endangered">Critically Endangered</string>
+
+    <!-- Home Base Camp Strings -->
+    <string name="home_hero_discover_button">DISCOVER</string>
+    <string name="home_atmosphere_dawn">Base Camp · Morning Mist</string>
+    <string name="home_atmosphere_day">Base Camp · Open Day</string>
+    <string name="home_atmosphere_dusk">Base Camp · Golden Dusk</string>
+    <string name="home_atmosphere_night">Base Camp · Serene Night</string>
+    <string name="home_recent_sightings_title">Recent Field Log</string>
+    <string name="home_empty_journal_message">No sightings logged in this journal yet. Tap DISCOVER to embark on your expedition.</string>
+    <string name="home_backpack_label">Explorer\'s Backpack</string>
+    <string name="home_view_playground">Design Lab (Dev)</string>
+
+    <!-- Card System & The 3 Pillars -->
+    <string name="card_action_flip_to_details">Inspect Reverse</string>
+    <string name="card_action_flip_to_front">View Front Plate</string>
+    <string name="card_pillar_scientific_title">Pillar I: Scientific Facts</string>
+    <string name="card_pillar_experience_title">Pillar II: Field Encounter</string>
+    <string name="card_pillar_lore_title">Pillar III: Lore &amp; Myths</string>
+    <string name="card_lore_disclaimer">NOTICE: The following narrative belongs to ludic fiction and popular cultural folklore. It does not constitute biological evidence nor replace zoological facts.</string>
+    <string name="card_proportion_label">5:7 Naturalist Plate in Cream Cardstock</string>
+    <string name="card_sighting_date_prefix">Spotted on</string>
+    <string name="card_location_protected">Protected location to preserve wildlife habitat</string>
+
+    <!-- Collection & Backpack -->
+    <string name="collection_title">Collection Backpack</string>
+    <string name="collection_empty_title">Empty Backpack</string>
+    <string name="collection_empty_description">Step outdoors and observe wildlife or domestic fauna with calm and scientific rigor.</string>
+    <string name="collection_filter_all">All species</string>
+    <string name="collection_filter_birds">Birds</string>
+    <string name="collection_filter_mammals">Mammals</string>
+    <string name="collection_filter_insects">Insects</string>
+
+    <!-- Field Journal Edition (Future Screen Preparation) -->
+    <string name="journal_edition_title">Field Journal Entry Edition</string>
+    <string name="journal_notes_placeholder">Add your field notes on animal behavior, ambient weather, or encounter details…</string>
+    <string name="journal_save_action">Save Journal Entry</string>
+    <string name="journal_weather_label">Atmospheric Conditions</string>
+
+    <!-- Design Playground (Internal Dev Lab) -->
+    <string name="playground_title">Living Design Playground</string>
+    <string name="playground_subtitle">Official WHO Animal v1 Design System Laboratory</string>
+    <string name="playground_tab_palette">Nuclear Palette</string>
+    <string name="playground_tab_typography">Editorial Typography</string>
+    <string name="playground_tab_components">Tactile Components</string>
+    <string name="playground_tab_motion">Motion &amp; Choreography</string>
+    <string name="playground_tab_bilingual">Bilingual &amp; Formats</string>
+
+    <!-- Motion Demo Strings -->
+    <string name="motion_demo_title">3-Step Discovery Choreography</string>
+    <string name="motion_step_1_title">1. Focus Pause (200ms)</string>
+    <string name="motion_step_1_desc">The viewfinder settles the image with an organic subtle blur.</string>
+    <string name="motion_step_2_title">2. Identity Reveal (300ms)</string>
+    <string name="motion_step_2_desc">The Common and Binomial names rise smoothly with gentle vertical lift.</string>
+    <string name="motion_step_3_title">3. Card Materialization (350ms)</string>
+    <string name="motion_step_3_desc">The physical Cream cardplate consolidates with tactile spring physics.</string>
+    <string name="motion_action_trigger">Play Discovery Choreography</string>
+    <string name="motion_spring_press_title">Tactile Spring Physics (97% scale on press)</string>
+
+    <!-- Plurals -->
+    <plurals name="collection_cards_count">
+        <item quantity="one">%d card discovered</item>
+        <item quantity="other">%d cards discovered</item>
+    </plurals>
+    <plurals name="home_recent_count">
+        <item quantity="one">%d recent sighting</item>
+        <item quantity="other">%d recent sightings</item>
+    </plurals>
+    <plurals name="collection_species_count">
+        <item quantity="one">%d species catalogued</item>
+        <item quantity="other">%d species catalogued</item>
+    </plurals>
+</resources>

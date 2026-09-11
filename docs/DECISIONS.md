@@ -187,3 +187,16 @@ Este documento registra formalmente las decisiones de arquitectura, producto y e
 * **Contexto:** En el prototipo previo se producían estados inconsistentes al intentar generar cartas sin capturas válidas o sin decisiones explícitas.
 * **Decisión:** El ciclo de descubrimiento opera como un pipeline estricto de avance unidireccional: Observation → IdentificationResult → IdentificationDecision → Capture → Card → Collection. Ninguna entidad posterior puede crearse sin la existencia y validación de la anterior.
 * **Impacto:** Integridad transaccional absoluta en el ciclo de vida del descubrimiento y prevención de estados corruptos.
+
+---
+
+## DEC-V1-024: Bilingual Foundation & Regional Localization
+* **Estado:** APPROVED (WHO-V1-004A)
+* **Contexto:** Who Animal v1 está concebido como una experiencia internacional desde su fundación. La presencia de textos hardcodeados en código o el soporte tardío de idiomas genera fricción, inconsistencias gramaticales en plurales y deuda técnica en la presentación.
+* **Decisión:** 
+  1. Se establece el soporte bilingüe nativo (Español como idioma base en `values/strings.xml` e Inglés en `values-en/strings.xml`) con paridad obligatoria del 100% de claves.
+  2. Queda terminantemente prohibido incluir cadenas de texto hardcodeadas en Jetpack Compose o en la capa de presentación; todo texto visible debe consumirse mediante `stringResource()` o `pluralStringResource()`.
+  3. La jerarquía de recursos se estructura en familias canónicas de prefijos: `common_*`, `home_*`, `card_*`, `collection_*`, `journal_*` y `playground_*`.
+  4. Los formatos de fecha, hora, coordenadas y cifras numéricas deben respetar las configuraciones regionales del dispositivo del usuario mediante `DateFormat` y `NumberFormat`.
+* **Impacto:** Arquitectura de presentación internacionalizada y limpia, eliminación de deuda técnica en localización y garantía de soporte idiomático simétrico en todas las fases del producto.
+
